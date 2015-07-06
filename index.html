@@ -1,0 +1,139 @@
+<!DOCTYPE HTML>
+<html ng-app="myblog">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<link href="http://hihiblog.qiniudn.com/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="http://hihiblog.qiniudn.com/bower_components/ngAnimate/css/ng-animation.css" rel="stylesheet" type="text/css">
+
+	<link href="/static/myblog.css" rel="stylesheet" type="text/css">
+
+	<title>YaoHongtao</title>
+
+
+<script type="text/ng-template" id="/template/home.html">
+<div ng-controller="homeCtrl" class="ng-cloak">
+    <div markdowntext>
+## 欢迎光临我的小站.
+
+LINKS & CONTACT
+
+-   GitHub: https://github.com/vrqin
+-   Git@OSC: http://git.oschina.net/littlefat
+-   Email: virqin@163.com
+-   QQ: 909066038
+
+> 书山有路勤为径，学海无涯苦作舟。黑发不知勤学早，白首方悔读书迟。
+
+```python
+The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!
+```
+    </div>
+</div>
+</script>
+
+
+<script type="text/ng-template" id="/template/post.html">
+<div ng-controller="postCtrl" class="ng-cloak">
+    <h1>{{post.title}}</h1>
+    <div markdown ng-model="post.text"> </div>
+</div>
+</script>
+
+</head>
+　　
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top" style="opacity: .9" role="navigation">
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/">yaohongtao</a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="active"><a href="#">Blog</a></li>
+					<li><a href="https://github.com/vrqin" target="_blank">GitHub</a></li>
+					<li><a href="http://git.oschina.net/littlefat" target="_blank">Git@OSC</a></li>
+					<li><a href="/#/page/aboutme.md">AboutMe</a></li>
+				</ul>
+			</div><!-- /.navbar-collapse -->
+		</div><!-- /.container-fluid -->
+	</nav>
+
+	<div class="container center-block" ng-controller="listCtrl">
+		<div class="row" style="padding-top: 70px; padding-bottom: 70px;">
+			<div class="col-md-4 col-sm-12">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">
+							Blog
+						</h3>
+					</div>
+				</div>
+				<ul class="list-group ng-cloak">
+					<li class="list-group-item scale-fade" ng-repeat="post in blogList"><a ng-href="/#/post/{{post.url}}">{{post.title}}</a></li>
+				</ul>
+			</div>
+
+			<div class="col-md-7 col-sm-12"  >
+				<div ng-view class="post-animate"></div>
+			</div>
+		</div>
+	</div>
+
+
+	<script src="http://hihiblog.qiniudn.com/bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="http://hihiblog.qiniudn.com/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="http://hihiblog.qiniudn.com/bower_components/angularjs/angular.min.js"></script>
+	<script src="bower_components/marked/lib/marked.js"></script>
+	<script src="http://hihiblog.qiniudn.com/bower_components/angular-route/angular-route.min.js"></script>
+	<script src="http://hihiblog.qiniudn.com/bower_components/angular-animate/angular-animate.min.js"></script>
+	<script src="http://hihiblog.qiniudn.com/bower_components/underscore/underscore.js"></script>
+	<script src="http://hihiblog.qiniudn.com/bower_components/underscore.string/dist/underscore.string.min.js"></script>
+
+	<script src="/static/myblog.js"></script>
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?688f47f0c49390654acbafc8466c6464";
+	  var s = document.getElementsByTagName("script")[0];
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+</body>
+
+</html>

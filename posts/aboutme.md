@@ -1,0 +1,87 @@
+title : About Me
+-------------
+LINKS & CONTACT
+
+-   Blog: http://cnblogs.com/virqin
+-   GitHub: https://github.com/vrqin
+-   Git@OSC: http://git.oschina.net/littlefat
+-   Email: virqin@163.com
+-   QQ: 909066038
+
+
+-   我的强项:`c/c++`,图像处理,车牌识别,人脸识别,物体跟踪等算法的实际应用
+-   `python`(我的最爱),javascript(`coffeescript`,`angularjs`)
+-   `超强的自学能力`
+-   良好的代码风格,喜欢重构代码
+-   熟悉 git&svn 版本控制，使用github托管代码,`有丰富的基于git的团队协作开发经验`
+-   常年混迹于github,持续关注各种新技术的发展
+-   熟悉python标准库,flask框架,ipython notebook. web开发,爬虫,科学计算,图像处理(验证码识别)都不在话下
+-   了解抓包技术，能进行简单协议分析,`写过无数爬虫` (requests,scrapy,urllib2,mongodb,xpath,css选择器,正则)
+-   熟料使用chrome开发者工具,写过自己的chrome扩展
+-   了解c/c++/java/php/golang/易语言...,掌握基本语法
+-   ubuntu忠实用户, 长年用虚拟机跑windows
+-   掌握科学上网技术，墙外的资料查找查看无压力
+
+
+- SKILLS:
+    - `python` :
+        - flask
+        - django
+        - ipython,`ipython notebook`
+        - scrapy
+        - numpy
+    - web :
+        - `angularjs`
+        - node.js
+        - `coffeescript`
+        - jquery
+        - `underscore`
+        - `bootstrap`
+        - tool :
+            - grunt
+            - bower
+            - koala
+            - fiddler
+            - chrome:
+                - chrome扩展开发
+                - `chrome开发者工具`
+        - safe :
+            - XSS
+            - CRFS
+            - 注入
+    - `golang`  
+    - java :
+        - `groovy` 学习中
+        - `scala` 学习中
+    - PHP
+    - C++,C : 两年acm经历
+    - linux:
+        - `ubuntu`
+        - zsh + oh-my-zsh
+        - ipython
+        - ssh 隧道 vpn 代理
+    - windows:
+        - 易语言
+        - ahk
+    - edit:
+        - `sublime text`
+        - vim
+    - datebase:
+        - `mongodb`
+        - mysql
+        - sqlite
+        - redis
+    - ide :
+        - visual studio
+        - eclipse
+    - 云平台:
+        - sae
+        - bae
+        - 七牛
+        - digitalocean vps
+    - 版本控制:
+        - `git`
+            - github
+            - oschina
+        - svn
+            - sae svn

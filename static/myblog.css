@@ -1,0 +1,69 @@
+/* Include this file in your html if you are using the CSP mode. */
+
+@charset "UTF-8";
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak],
+.ng-cloak, .x-ng-cloak,
+.ng-hide {
+  display: none !important;
+}
+
+ng\:form {
+  display: block;
+}
+
+.ng-animate-block-transitions {
+  transition:0s all!important;
+  -webkit-transition:0s all!important;
+}
+
+/* show the element during a show/hide animation when the
+* animation is ongoing, but the .ng-hide class is active */
+
+/*******************************/
+
+
+.ng-hide-add-active, .ng-hide-remove {
+  display: block!important;
+}
+
+
+li a:hover, a:focus{
+  text-decoration: none;
+  border-bottom: 2px solid blue;
+}
+
+
+/*******************************/
+.post-animate {
+  overflow: hidden;
+}
+.post-animate.ng-enter {
+  opacity: 0;
+  -webkit-transition: all .5s ease;
+          transition: all .5s ease;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+.post-animate.ng-enter-active {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  opacity: 1;
+
+}
+.post-animate.ng-leave {
+  -webkit-transition: all .2s ease;
+          transition: all .2s ease;
+}
+.post-animate.ng-leave-active {
+  opacity: 0;
+}
+
+/*******************************/
+
+
+
+body{
+  font-family: Georgia, "Times New Roman", Times, "Songti SC", "SimSun", serif;
+}
+
