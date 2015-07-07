@@ -1,9 +1,8 @@
-##Qualcomm平台 AEE运行机制的深入剖析
-
-标签: aee android   android aee
-转自: http://blog.csdn.net/comicray/article/details/4403470
-
-----
+title: Qualcomm平台 AEE运行机制的深入剖析
+description:
+category: Brew
+tag: aee android
+-------------------------
 
 前言
   本文利图对Qualcomm平台的AEE（Application Execute Entironment）做一个深入的研
