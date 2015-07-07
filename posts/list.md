@@ -1,26 +1,26 @@
-title: å…³äºä»£ç å®¡æŸ¥çš„å‡ ç‚¹å»ºè®®
-description:
-category: CodeReview
-tag: CodeReview
-url: 2015-07-06-¹ØÓÚ´úÂëÉó²éµÄ¼¸µã½¨Òé.md
--------
-title: è®©AppletéšBREWå¯åŠ¨è€Œå¯åŠ¨
-description:
-category: Brew
-tag: Brew
-url: 2015-07-06-[Brew]ÈÃAppletËæBrewÆô¶¯¶øÆô¶¯.md
--------
 title: Qualcommå¹³å° AEEè¿è¡Œæœºåˆ¶çš„æ·±å…¥å‰–æ
 description:
 category: Brew
 tag: aee android
-url: 2015-07-06-QualcommÆ½Ì¨-AEEÔËĞĞ»úÖÆÆÊÎö.md
+url: 2015-07-06-Qualcomm-AEE.md
 -------
 title: Git å¸¸ç”¨æ“ä½œ
 description:
 category: Git
 tag: Git
 url: 2015-07-06-Git-Command.md
+-------
+title: å…³äºä»£ç å®¡æŸ¥çš„å‡ ç‚¹å»ºè®®
+description:
+category: CodeReview
+tag: CodeReview
+url: 2015-07-06-Code-Review.md
+-------
+title: è®©AppletéšBREWå¯åŠ¨è€Œå¯åŠ¨
+description:
+category: Brew
+tag: Brew
+url: 2015-07-06-Applet-AutoStart.md
 -------
 title: windowsä¸‹è¿è¡Œpython flaskæŠ¥"UnicodeDecodeError"é”™è¯¯
 description:
