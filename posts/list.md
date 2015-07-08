@@ -1,3 +1,15 @@
+title: Git Submodule的坑
+description:
+category: Git
+tag: Brew Git Submodule
+url: 2015-07-08-Git-Submodule-Trap.md
+-------
+title: BREW中几种常用的效果（淡淡浅出、半透明）
+description:
+category: Brew
+tag: Brew Bitmap FadeIn FadeOut
+url: 2015-07-08-Brew-Bitmap-Fade-in-Fade-out.md
+-------
 title: Qualcomm平台 AEE运行机制的深入剖析
 description:
 category: Brew
