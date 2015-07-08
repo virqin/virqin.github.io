@@ -10,7 +10,7 @@ _“
 前言 随着近几年的发展，Git已经成为开源界的标准的版本控制工具。开源界的重量级项目，如Linux, Android, Eclipse, Gnome, KDE, Qt, ROR, Debian，无一例外的都是使用git来进行版本控制。
 ”_
 
-![Alt text](./image/git_trap.jpg)
+![Alt text](http://cdn.cocimg.com/cms/uploads/allimg/130509/4196_130509110536_1.jpg)
 
 前言
 随着近几年的发展，Git已经成为开源界的标准的版本控制工具。开源界的重量级项目，如Linux, Android, Eclipse, Gnome, KDE, Qt, ROR, Debian，无一例外的都是使用git来进行版本控制。如果你还不会Git，那么恕我直言，你已经out了，赶紧抽空充充电吧。本文并不打算做Git入门级介绍，想学习git的同学，推荐国内作者蒋鑫写的《Git权威指南》。
