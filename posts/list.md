@@ -4,7 +4,7 @@ category: ZMQ
 tag: ZMQ
 url: 2015-07-16-ZeroMQ-5-Advanced Pub-Sub Patterns.md
 -------
-title: 第二章 可靠的请求-应答模式
+title: 第四章 可靠的请求-应答模式
 description:
 category: ZMQ
 tag: ZMQ
@@ -22,7 +22,7 @@ category: ZMQ
 tag: ZMQ
 url: 2015-07-16-ZeroMQ-2-Development.md
 -------
-title: ZMQ 指南
+title: 第一章 ZMQ 指南
 description:
 category: ZMQ
 tag: ZMQ
