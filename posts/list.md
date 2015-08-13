@@ -1,3 +1,9 @@
+title: 给VirtualBox 4.0+的虚拟盘(VDI)文件扩容
+description:
+category: VirtualBox
+tag: 虚拟机;扩容
+url: 2015-08-13-Resize-VirtualBox-4.0+-VirtualDisk.md
+-------
 title: 第五章 高级发布-订阅模式
 description:
 category: ZMQ
