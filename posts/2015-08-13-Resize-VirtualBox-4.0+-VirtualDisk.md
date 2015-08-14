@@ -63,3 +63,85 @@ VirtualBox 4.0 版增加了一个非常酷的新功能：您可以在几秒钟�
 调整后空间分布如下:
 
 ***	| [ / ]	32G | [ SWAP ] 8G	|***
+
+## 遗留问题
+
+使用gparted调整后,系统启动明显变慢,发现是新的交换区没有起作用导致,打开/etc/fstab:
+
+```
+bb@bb-ubuntu:~$ sudo gedit /etc/fstab
+
+# /etc/fstab: static file system information.
+#
+# Use 'blkid' to print the universally unique identifier for a
+# device; this may be used with UUID= as a more robust way to name devices
+# that works even if disks are added and removed. See fstab(5).
+#
+# <file system> <mount point>   <type>  <options>       <dump>  <pass>
+# / was on /dev/sda1 during installation
+UUID=d578e361-4466-4cb9-b3e2-cdf61b2db054 /               ext4    errors=remount-ro 0       1
+# swap was on /dev/sda5 during installation
+UUID=35497348-620e-49a5-be92-4ab9201bb3e5 none            swap    sw              0       0
+
+```
+
+查询分区UUID, 使用上面提示的'blkid':
+
+`sudo blkid'
+
+```
+bb@bb-ubuntu:~$ sudo blkid
+
+/dev/sda1: UUID="d578e361-4466-4cb9-b3e2-cdf61b2db054" TYPE="ext4" PARTUUID="e9001d6c-01"
+/dev/sda5: UUID="8d5f0639-b427-4cb1-b360-cdabaff459b2" TYPE="swap" PARTUUID="e9001d6c-05"
+
+```
+
+确认分区挂载关系:
+
+```
+bb@bb-ubuntu:~$ sudo fdisk -l
+
+Disk /dev/sda: 39.1 GiB, 41943040000 bytes, 81920000 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0xe9001d6c
+
+Device     Boot    Start      End  Sectors  Size Id Type
+/dev/sda1  *        2048 66021375 66019328 31.5G 83 Linux
+/dev/sda2       66021376 81919999 15898624  7.6G  5 Extended
+/dev/sda5       66023424 81917951 15894528  7.6G 82 Linux swap / Solaris
+
+```
+
+由以上三组配置可以看到, fstab中的swap交换分区挂载的UUID应该更新为/dev/sda5:
+`8d5f0639-b427-4cb1-b360-cdabaff459b2`
+
+修改后的/etc/fstab:
+
+```
+# /etc/fstab: static file system information.
+#
+# Use 'blkid' to print the universally unique identifier for a
+# device; this may be used with UUID= as a more robust way to name devices
+# that works even if disks are added and removed. See fstab(5).
+#
+# <file system> <mount point>   <type>  <options>       <dump>  <pass>
+# / was on /dev/sda1 during installation
+UUID=d578e361-4466-4cb9-b3e2-cdf61b2db054 /               ext4    errors=remount-ro 0       1
+# swap was on /dev/sda5 during installation
+UUID=8d5f0639-b427-4cb1-b360-cdabaff459b2 none            swap    sw              0       0
+```
+
+然后重启, 就能感受到系统启动加速了很多, 上个系统分区图:
+
+![1](images/gparted_vb.png)
+
+## 扩展
+
+公司电脑使用的是Win7+VirtualBox(Ubuntu)方式, 家中电脑安装的为Win7+Debian双系统方式, 因分区方式没注意, 近期根空间即将变慢
+所以又重新折腾了一次
+
+主要是修改/etc/fstab, 使用gparted调整和移动分区, 修改fstab一定要备份!!
