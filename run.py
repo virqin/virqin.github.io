@@ -28,4 +28,8 @@ def posts(filename):
 def template(filename):
     return send_from_directory('./template/', filename)
 
+#@app.route('/post/image/<path:filename>')
+#def post_image(filename):
+#    return send_from_directory('./posts/images/', filename, cache_timeout=0)
+
 app.run(debug=True,host="127.0.0.1")

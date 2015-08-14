@@ -137,7 +137,7 @@ UUID=8d5f0639-b427-4cb1-b360-cdabaff459b2 none            swap    sw            
 
 然后重启, 就能感受到系统启动加速了很多, 上个系统分区图:
 
-![1](images/gparted_vb.png)
+![1](posts/images/gparted_vb.png)
 
 ## 扩展
 
@@ -145,3 +145,83 @@ UUID=8d5f0639-b427-4cb1-b360-cdabaff459b2 none            swap    sw            
 所以又重新折腾了一次
 
 主要是修改/etc/fstab, 使用gparted调整和移动分区, 修改fstab一定要备份!!
+
+硬盘分区挂载情况:
+
+```
+bb@bb-debian:~$ df -lh
+文件系统        容量  已用  可用 已用% 挂载点
+/dev/sda8        30G  6.6G   22G   24% /
+udev             10M     0   10M    0% /dev
+tmpfs           395M  6.1M  389M    2% /run
+tmpfs           986M   22M  965M    3% /dev/shm
+tmpfs           5.0M  4.0K  5.0M    1% /run/lock
+tmpfs           986M     0  986M    0% /sys/fs/cgroup
+/dev/sda14      2.9G  1.2G  1.6G   42% /var
+/dev/sda12       25G  7.2G   16G   32% /home
+/dev/sda15      929M  1.4M  864M    1% /tmp
+tmpfs           198M  8.0K  198M    1% /run/user/121
+tmpfs           198M   28K  198M    1% /run/user/1000
+
+```
+
+分区UUID：
+
+```
+/dev/sda1: UUID="56D6967CD6965BD5" TYPE="ntfs" PARTUUID="e467e467-01"
+/dev/sda5: UUID="2ACCDCFECCDCC56B" TYPE="ntfs" PARTUUID="e467e467-05"
+/dev/sda6: LABEL="M-fM-^VM-0M-eM-^JM- M-eM-^MM-7" UUID="32B8A0FDB8A0C129" TYPE="ntfs" PARTUUID="e467e467-06"
+/dev/sda7: LABEL="M-PM-BM-<M-SM->M-m" UUID="10F4-0F2D" TYPE="vfat" PARTUUID="e467e467-07"
+/dev/sda8: UUID="f143b662-89e9-45a1-bf94-7e0f4ae363f7" TYPE="ext4" PARTUUID="e467e467-08"
+/dev/sda9: UUID="429edbbd-7a1e-4761-80a5-b9d3f03e97ab" TYPE="swap" PARTUUID="e467e467-09"
+/dev/sda10: UUID="56e26f1b-8eb1-4318-af5e-32aaf07d0dab" TYPE="swap" PARTUUID="e467e467-0a"
+/dev/sda11: UUID="f3ed7b83-9bcc-40e2-bcee-efb0dd2bf880" TYPE="swap" PARTUUID="e467e467-0b"
+/dev/sda12: UUID="af6e26db-e0b4-42b2-9d1d-fae65f732ded" TYPE="ext4" PARTUUID="e467e467-0c"
+/dev/sda13: UUID="565db233-de6d-48e6-9657-2935971df28d" TYPE="swap" PARTUUID="e467e467-0d"
+/dev/sda14: UUID="7b59272e-999b-482c-acc4-7ca304c10d1e" TYPE="ext4" PARTUUID="e467e467-0e"
+/dev/sda15: UUID="1617d57d-120f-4be1-a6fb-8d7fab07ca99" TYPE="ext4" PARTUUID="e467e467-0f"
+```
+
+分区表：
+
+```
+bb@bb-debian:~$ cat /etc/fstab
+# /etc/fstab: static file system information.
+#
+# Use 'blkid' to print the universally unique identifier for a
+# device; this may be used with UUID= as a more robust way to name devices
+# that works even if disks are added and removed. See fstab(5).
+#
+# <file system> <mount point>   <type>  <options>       <dump>  <pass>
+
+# / was on /dev/sda8 during installation
+UUID=f143b662-89e9-45a1-bf94-7e0f4ae363f7 /               ext4    errors=remount-ro 0       1
+
+# /home was on /dev/sda12 during installation
+UUID=af6e26db-e0b4-42b2-9d1d-fae65f732ded /home           ext4    defaults        0       2
+
+# /tmp was on /dev/sda11 during installation
+#UUID=5129ec6f-8f21-47e5-979c-c7eb84838e41 /tmp            ext4    defaults        0       2
+UUID=1617d57d-120f-4be1-a6fb-8d7fab07ca99 /tmp            ext4    defaults        0       2
+
+# /var was on /dev/sda9 during installation
+#UUID=9e8cf2d9-d75c-4607-977d-59f2164dcdf5 /var            ext4    defaults        0       2
+UUID=7b59272e-999b-482c-acc4-7ca304c10d1e /var            ext4    defaults        0       2
+
+# swap was on /dev/sda10 during installation
+#UUID=56e26f1b-8eb1-4318-af5e-32aaf07d0dab none            swap    sw              0       0
+UUID=565db233-de6d-48e6-9657-2935971df28d none            swap    sw              0       0
+
+/dev/sr0        /media/cdrom0   udf
+9660 user,noauto     0       0
+```
+
+> '#'标志原始UUID
+
+* 分区图
+
+双系统，有点乱，最后的60G+分配给了Debian:
+
+![2](posts/images/gparted_debian.png)
+
+
