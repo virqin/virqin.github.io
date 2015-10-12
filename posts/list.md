@@ -1,3 +1,9 @@
+title: 使用python将字符串转为摩斯码
+description:
+category: python
+tag: Morse code;python
+url: 2015-10-12-Python-Char-To-MorseCode.md
+-------
 title: 使用python搭建微信公众平台遇到的问题
 description:
 category: python
