@@ -1,3 +1,9 @@
+title: 使用python搭建微信公众平台遇到的问题
+description:
+category: python
+tag: 微信公众平台;python
+url: 2015-10-12-Develop-WeiXin-With-Python.md
+-------
 title: 给VirtualBox 4.0+的虚拟盘(VDI)文件扩容
 description:
 category: VirtualBox
