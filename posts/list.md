@@ -2,7 +2,7 @@ title: 修改QXDM(3.12.714)去掉IE版本检测
 description:
 category: QXDM
 tag: QXDM
-url: 2016-09-06-Fix-.md
+url: 2016-09-06-Fix-Internet-Error.md
 -------
 title: 使用python将字符串转为摩斯码
 description:
