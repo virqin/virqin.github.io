@@ -1,3 +1,9 @@
+title: 修改QXDM(3.12.714)去掉IE版本检测
+description:
+category: QXDM
+tag: QXDM
+url: 2016-09-06-Fix-.md
+-------
 title: 使用python将字符串转为摩斯码
 description:
 category: python
@@ -94,11 +100,23 @@ category: python
 tag: python
 url: 2015-02-16-python-gbk-to-utf8.md
 -------
+title: 第一次使用邮件列表
+description:
+category: life
+tag: life
+url: 2015-02-16-github-find-issues.md
+-------
 title: markdown编辑器搜集
 description: 
 category: markdown
 tag: markdown
 url: 2015-01-21-markdown-editor.md
+-------
+title: 基于知乎的topic树对关键词提取的简单优化
+description: 
+category: python 
+tag: python "machine learn"
+url: 2015-01-03-zhihu-topic-lda.md
 -------
 title: python 自动关闭文件的测试
 description: 
@@ -156,6 +174,12 @@ description:
 category: web
 tag: github angularjs markdown
 url: 2014-08-18-angular-markdown-simple-blog.md
+-------
+title: go语言学习之校园网代理加速器
+description: go语言学习小作品
+category: golang
+tag: golang
+url: 2013-12-20-golang-proxy.md
 -------
 title: Python写爬虫抓站的一些技巧
 description: 
